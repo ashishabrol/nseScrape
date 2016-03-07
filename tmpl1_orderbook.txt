@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Bootstrap 3 Simple Tables</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="bs-example">
+    <table class="table">
+        <thead>
+            <tr>
+			        <th>Time</th>
+				<th>BuyQuantity</th>
+				<th>BuyPrice></th>
+				<th>SellPrice</th>
+				<th>SellQuantity</th>
+			</tr>
+        </thead>
+        <tbody>
+           % for row in cursor:
+	   <%
+				import arrow
+           			a=arrow.get(row[0]).to('Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss ZZ')
+	   %>
+
+			<tr>
+				<td> ${a} </td>
+				% if row[28] > 10000:
+                                        <td bgcolor=1DB45A> ${row[28]} </td>
+                                % else:
+                                        <td> ${row[28]} </td>
+                                % endif	
+				<td> ${row[23]} </td>
+                                <td> ${row[13]} </td>
+				% if row[18] > 10000:
+                                        <td bgcolor=EE1832> ${row[18]} </td>
+                                % else:
+                                        <td> ${row[18]} </td>
+                                % endif				
+
+			</tr>
+			<tr>
+                                <td> ${a} </td>
+                                % if row[29] > 10000:
+                                        <td bgcolor=1DB45A> ${row[29]} </td>
+                                % else:
+                                        <td> ${row[29]} </td>
+                                % endif
+				<td> ${row[24]} </td>
+                                <td> ${row[14]} </td>
+				% if row[19] > 10000:
+                                        <td bgcolor=EE1832> ${row[19]} </td>
+                                % else:
+                                        <td> ${row[19]} </td>
+                                % endif
+                        </tr>
+			<tr>
+                                <td> ${a} </td>
+                                % if row[30] > 10000:
+                                        <td bgcolor=1DB45A> ${row[30]} </td>
+                                % else:
+                                        <td> ${row[30]} </td>
+                                % endif
+				<td> ${row[25]} </td>
+                                <td> ${row[15]} </td>
+			        % if row[20] > 10000:
+                                        <td bgcolor=EE1832> ${row[20]} </td>
+                                % else:
+                                        <td> ${row[20]} </td>
+                                % endif
+                        </tr>
+			<tr>
+                                <td> ${a} </td>
+				% if row[31] > 10000:
+                                        <td bgcolor=1DB45A> ${row[31]} </td>
+                                % else:
+                                        <td> ${row[31]} </td>
+                                % endif
+                                <td> ${row[26]} </td>
+                                <td> ${row[16]} </td>
+                        	% if row[21] > 10000:
+                                        <td bgcolor=EE1831> ${row[21]} </td>
+                                % else:
+                                        <td> ${row[21]} </td>
+                                % endif
+			 </tr>
+			 <tr>
+                                <td> ${a} </td>
+                         	% if row[32] > 10000:
+                                        <td bgcolor=1DB45A> ${row[32]} </td>
+                                % else:
+                                        <td> ${row[32]} </td>
+                                % endif
+                                <td> ${row[27]} </td>
+                                <td> ${row[17]} </td>
+                                % if row[22] > 10000:
+                                        <td bgcolor=EE1832> ${row[22]} </td>
+                                % else:
+                                        <td> ${row[22]} </td>
+                                % endif
+                        </tr>
+			% endfor
+        </tbody>
+    </table>
+</div>
+</body>
+</html>                                		
