@@ -1,0 +1,20 @@
+import sqlite3
+from lxml import etree
+from lxml.etree import tostring
+from lxml.builder import E
+from mako.template import Template
+
+from bottle import route, run, static_file
+
+@route('/home')
+def home():
+    db=sqlite3.connect("test.db",isolation_level=None)
+    cursor=db.cursor()
+    cursor.execute("select mLastPrice,mBuyQuantity1, mSellQuantity1  from nifty")
+    htmlfile=open("tmplhtml.html","w")
+    mytemplate=Template(filename='tmpl1.txt')
+    htmlfile.write(mytemplate.render(cursor=cursor))
+    htmlfile.close()
+    return static_file("tmplhtml.html",root="")
+
+run(host='localhost',port=8080, debug=True)
