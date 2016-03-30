@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Bootstrap 3 Simple Tables</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="bs-example">
+    <table class="table">
+        <thead>
+            <tr>
+			    <th>Time</th>
+				<th>BuyQuantity</th>
+				<th>BuyPrice></th>
+				<th>SellPrice</th>
+				<th>SellQuantity</th>
+			</tr>
+        </thead>
+        <tbody>
+           % for row in cursor:
+	   <%
+				import arrow
+           			a=arrow.get(row[0]).to('Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss ZZ')
+	   %>
+
+			<tr>
+				<td> ${a} </td>
+				<td> ${row[28]} </td>
+                <td> ${row[23]} </td>
+                <td> ${row[13]} </td>
+				<td> ${row[18]} </td>
+			</tr>
+			<tr>
+                <td> ${a} </td>
+                <td> ${row[29]} </td>
+				<td> ${row[24]} </td>
+                <td> ${row[14]} </td>
+                <td> ${row[19]} </td>
+			</tr>
+			<tr>
+                <td> ${a} </td>
+                <td> ${row[30]} </td>
+                <td> ${row[25]} </td>
+                <td> ${row[15]} </td>
+	            <td> ${row[20]} </td>
+			</tr>
+			<tr>
+                <td> ${a} </td>
+				<td> ${row[31]} </td>
+                <td> ${row[26]} </td>
+				<td> ${row[16]} </td>
+                <td> ${row[21]} </td>
+                </tr>
+			 <tr>
+				<td> ${a} </td>
+                <td> ${row[32]} </td>
+                <td> ${row[27]} </td>
+                <td> ${row[17]} </td>
+                <td> ${row[22]} </td>
+                </tr>
+
+			% endfor 
+			</tbody>
+    </table>
+</div>
+</body>
+</html>                                	
