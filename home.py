@@ -68,7 +68,9 @@ def home():
 
         str1=(str1.strip()).rsplit(' ', 1)[0]
         str1=str1.replace("date1", "date(unixtime,'unixepoch')")
+	str1+=" and mLastPrice !=\'-\'"
         q=str1
+	print str1
         db=sqlite3.connect("test.db",isolation_level=None)
         cursor=db.cursor()
         cursor.execute(q)
